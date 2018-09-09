@@ -194,6 +194,9 @@ PROCEDURE DrawBuilding(VAR color:STRINGSEQ;x,h,w:CARDINAL);
 VAR i,j,count:CARDINAL;
     line:ARRAY [0..15] OF CHAR;
 BEGIN
+  (* avoid to startup with invisible buildings if there isn't revere
+     video on current terminal and block is a blank space *)
+  IF (SEQ[REVERSE]='') AND (block=' ') THEN block:=377C END;
   WRITE(color);
   FILL(ADR(line),15,ORD(block));
   line[w]:=0C;

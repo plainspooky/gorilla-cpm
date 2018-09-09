@@ -33,54 +33,77 @@ BEGIN
 
   WRITE(SEQ[YELLOW]);
 
-  CursorXY(x+46,y+0);
-  WRITE(SEQ[REVERSE],'     ',SEQ[PLAIN],'    ',SEQ[REVERSE],'  ',SEQ[PLAIN],'    ',
-  SEQ[REVERSE],'    ');
+  IF SEQ[REVERSE]='' THEN
+    CursorXY(x+46,y+0);
+    WRITE('/////    //    ////');
 
-  CursorXY(x+46,y+1);
-  WRITE(SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',
-  SEQ[REVERSE],'    ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',
-  SEQ[REVERSE],'  ');
+    CursorXY(x+46,y+1);
+    WRITE('//  //  ////  //  //');
 
-  CursorXY(x+46,y+2);
-  WRITE(SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ',
-  SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ',SEQ[REVERSE],'  ');
+    CursorXY(x+46,y+2);
+    WRITE('//  // //  // //');
 
-  CursorXY(x,y+3);
-  WRITELN(SEQ[PLAIN],' ',SEQ[REVERSE],'    ',SEQ[PLAIN],'   ',SEQ[REVERSE],'    ',
-  SEQ[PLAIN],'  ',SEQ[REVERSE],'     ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',
-  SEQ[PLAIN],' ',SEQ[REVERSE],'  ',SEQ[PLAIN],'    ',SEQ[REVERSE],'  ',SEQ[PLAIN],
-  '     ',SEQ[REVERSE],'    ',SEQ[PLAIN],'     ',SEQ[REVERSE],'     ',SEQ[PLAIN],
-  '  ',SEQ[REVERSE],'      ',SEQ[PLAIN],'  ',SEQ[REVERSE],'    ');
+    CursorXY(x,y+3);
+    WRITE(' ////   ////  /////  // //    //     ////     /////  //////  ////');
 
-  CursorXY(x,y+4);
-  WRITELN(SEQ[REVERSE],'  ',SEQ[PLAIN],'     ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',
-  SEQ[REVERSE],'  ',SEQ[PLAIN],' ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],
-  '  ',SEQ[PLAIN],' ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ',SEQ[REVERSE],'  ',SEQ[PLAIN],
-  '    ',SEQ[REVERSE],'  ',SEQ[PLAIN],'    ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',
-  SEQ[REVERSE],'  ',SEQ[PLAIN],'    ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',
-  SEQ[REVERSE],'  ',SEQ[PLAIN],' ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],
-  '  ',SEQ[PLAIN],'     ',SEQ[REVERSE],'  ');
+    CursorXY(x,y+4);
+    WRITE('//     //  // //  // // //    //    //  //    //  // //  //     //');
 
-  CursorXY(x,y+5);
-  WRITE(SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ',
-  SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ',
-  SEQ[REVERSE],'     ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ',
-  SEQ[REVERSE],'  ',SEQ[PLAIN],'    '
-  ,SEQ[REVERSE],'  ',SEQ[PLAIN],'    ',
-  SEQ[REVERSE],'      ',SEQ[PLAIN],' ',SEQ[PLAIN] ,'  ',SEQ[PLAIN],' ',
-  SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ', SEQ[REVERSE],
-  '  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ',SEQ[REVERSE],'  ',SEQ[PLAIN],
-  '  ',SEQ[REVERSE],'  ');
+    CursorXY(x,y+5);
+    WRITE('//  // //  // /////  // //    //    //////    //  // //  // //  //');
 
-  CursorXY(x,y+6);
-  WRITE(SEQ[PLAIN],' ',SEQ[REVERSE],'    ',SEQ[PLAIN],'   ',SEQ[REVERSE],'    ',
-  SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ',
-  SEQ[REVERSE],'  ',SEQ[PLAIN],' ',SEQ[REVERSE],'     ',SEQ[PLAIN],' ',SEQ[REVERSE],
-  '     ',SEQ[PLAIN],' ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',
-  SEQ[PLAIN],' ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ',SEQ[REVERSE],'     ',SEQ[PLAIN],
-  '  ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',
-  SEQ[REVERSE],'    ',SEQ[PLAIN]);
+    CursorXY(x,y+6);
+    WRITE(' ////   ////  //  // // ///// ///// //  // // /////  //  //  ////');
+  ELSE
+    CursorXY(x+46,y+0);
+    WRITE(SEQ[REVERSE],'     ',SEQ[PLAIN],'    ',SEQ[REVERSE],'  ',SEQ[PLAIN],'    ',
+    SEQ[REVERSE],'    ');
+
+    CursorXY(x+46,y+1);
+    WRITE(SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',
+    SEQ[REVERSE],'    ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',
+    SEQ[REVERSE],'  ');
+
+    CursorXY(x+46,y+2);
+    WRITE(SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ',
+    SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ',SEQ[REVERSE],'  ');
+
+    CursorXY(x,y+3);
+    WRITE(SEQ[PLAIN],' ',SEQ[REVERSE],'    ',SEQ[PLAIN],'   ',SEQ[REVERSE],'    ',
+    SEQ[PLAIN],'  ',SEQ[REVERSE],'     ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',
+    SEQ[PLAIN],' ',SEQ[REVERSE],'  ',SEQ[PLAIN],'    ',SEQ[REVERSE],'  ',SEQ[PLAIN],
+    '     ',SEQ[REVERSE],'    ',SEQ[PLAIN],'     ',SEQ[REVERSE],'     ',SEQ[PLAIN],
+    '  ',SEQ[REVERSE],'      ',SEQ[PLAIN],'  ',SEQ[REVERSE],'    ');
+
+    CursorXY(x,y+4);
+    WRITE(SEQ[REVERSE],'  ',SEQ[PLAIN],'     ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',
+    SEQ[REVERSE],'  ',SEQ[PLAIN],' ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],
+    '  ',SEQ[PLAIN],' ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ',SEQ[REVERSE],'  ',SEQ[PLAIN],
+    '    ',SEQ[REVERSE],'  ',SEQ[PLAIN],'    ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',
+    SEQ[REVERSE],'  ',SEQ[PLAIN],'    ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',
+    SEQ[REVERSE],'  ',SEQ[PLAIN],' ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],
+    '  ',SEQ[PLAIN],'     ',SEQ[REVERSE],'  ');
+
+    CursorXY(x,y+5);
+    WRITE(SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ',
+    SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ',
+    SEQ[REVERSE],'     ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ',
+    SEQ[REVERSE],'  ',SEQ[PLAIN],'    '
+    ,SEQ[REVERSE],'  ',SEQ[PLAIN],'    ',
+    SEQ[REVERSE],'      ',SEQ[PLAIN],' ',SEQ[PLAIN] ,'  ',SEQ[PLAIN],' ',
+    SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ', SEQ[REVERSE],
+    '  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ',SEQ[REVERSE],'  ',SEQ[PLAIN],
+    '  ',SEQ[REVERSE],'  ');
+
+    CursorXY(x,y+6);
+    WRITE(SEQ[PLAIN],' ',SEQ[REVERSE],'    ',SEQ[PLAIN],'   ',SEQ[REVERSE],'    ',
+    SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ',
+    SEQ[REVERSE],'  ',SEQ[PLAIN],' ',SEQ[REVERSE],'     ',SEQ[PLAIN],' ',SEQ[REVERSE],
+    '     ',SEQ[PLAIN],' ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',
+    SEQ[PLAIN],' ',SEQ[REVERSE],'  ',SEQ[PLAIN],' ',SEQ[REVERSE],'     ',SEQ[PLAIN],
+    '  ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',SEQ[REVERSE],'  ',SEQ[PLAIN],'  ',
+    SEQ[REVERSE],'    ',SEQ[PLAIN]);
+  END;
 
   WRITE(SEQ[CYAN]);
   CursorXY(x+1,y+0); WRITE('CP/M-80 & Turbo Modula-2 version (C) 2015');

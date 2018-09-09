@@ -256,8 +256,8 @@ BEGIN
   SEQ[INSLINE]:='*L'; SEQ[INSLINE][0]:=33C;
   SEQ[DELLINE]:='*M'; SEQ[DELLINE][0]:=33C;
   SEQ[BEEP]:='x'; SEQ[BEEP][0]:=7C;
-  SEQ[CURSORON]:='';
-  SEQ[CURSOROFF]:='';
+  SEQ[CURSORON]:='*y5'; SEQ[CURSORON][0]:=33C;
+  SEQ[CURSOROFF]:='*x5'; SEQ[CURSOROFF][0]:=33C;
   SEQ[TERMRESET]:='';
 END InitVT52;
 
@@ -354,13 +354,22 @@ VAR i,j:CARDINAL;
     s:ARRAY[0..79] OF CHAR;
 BEGIN
   s:='                                                                                ';
+  (* if there isn't reverse video option on the current terminal,
+     (re)populates 's' array with ASCII 255. *)
+  IF SEQ[REVERSE]='' THEN
+    FOR i:=0 TO 79 DO
+       s[i]:=377C;
+    END;
+  END;
   s[x2-x1+1]:=0C;
   WRITE(SEQ[REVERSE]);
   IF v THEN
     FOR i:=1 TO 2 DO
       FOR j:=y1 TO y2 DO
         IF i=1 THEN CursorXY(x1,j) ELSE CursorXY(x2,j) END;
-        WRITE(' ');
+        (* if there isn't reverse video option on the current terminal,
+           uses ASCII 255 char, uses space *)
+        IF SEQ[REVERSE]='' THEN WRITE(377C) ELSE WRITE(' ') END;
       END;
     END;
   END;
